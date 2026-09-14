@@ -1,0 +1,11 @@
+# 1. Activate virtual environment
+.venv\Scripts\Activate.ps1
+
+# 2. Install dependencies
+pip install -r backend/requirements.txt
+
+# 3. Start the Flask API (keep this terminal open)
+python backend/app.py
+
+# 4. Open the frontend in your browser
+start frontend/index.html
