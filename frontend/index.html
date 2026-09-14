@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>House Price Predictor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="backdrop"></div>
+    <main class="app-shell">
+      <section class="predictor card">
+        <header>
+          <div>
+            <p class="badge badge-soft">Prediction form</p>
+            <h2>House Price Predictor</h2>
+            <p class="subtle">
+              All numbers are required. The more accurate your inputs, the better the
+              estimate.
+            </p>
+          </div>
+        </header>
+        <div class="split">
+          <form id="prediction-form">
+            <div class="field">
+              <label for="median_income">Median Income (10k USD)</label>
+              <input id="median_income" name="median_income" type="number" step="0.1" min="0" required />
+            </div>
+            <div class="field">
+              <label for="avg_rooms">Average Rooms</label>
+              <input id="avg_rooms" name="avg_rooms" type="number" step="0.1" min="0" required />
+            </div>
+            <div class="field">
+              <label for="avg_bedrooms">Average Bedrooms</label>
+              <input id="avg_bedrooms" name="avg_bedrooms" type="number" step="0.1" min="0" required />
+            </div>
+            <div class="field">
+              <label for="population">Population</label>
+              <input id="population" name="population" type="number" step="1" min="0" required />
+            </div>
+            <div class="field">
+              <label for="house_age">House Age (years)</label>
+              <input id="house_age" name="house_age" type="number" step="1" min="0" required />
+            </div>
+            <div class="field">
+              <label for="latitude">Latitude</label>
+              <input id="latitude" name="latitude" type="number" step="0.01" required />
+            </div>
+            <div class="field">
+              <label for="longitude">Longitude</label>
+              <input id="longitude" name="longitude" type="number" step="0.01" required />
+            </div>
+            <button type="submit">Predict price</button>
+            <p class="hint">Median value is returned in $100k units (per dataset).</p>
+          </form>
+
+          <div class="result-panel" aria-live="polite">
+            <p class="panel-label">Estimated price</p>
+            <p class="price usd" id="price-usd">—</p>
+            <p class="price inr" id="price-inr">—</p>
+            <p id="result-message" class="result-message">Fill out the form to see a prediction.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+:root {
+  font-family: "Segoe UI", "Inter", system-ui, -apple-system, BlinkMacSystemFont;
+  color: #0f172a;
+  background-color: #f8fafc;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #020617;
+  color: inherit;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, #4f46e5, transparent 45%),
+    radial-gradient(circle at 80% 0%, #4c1d95, transparent 40%),
+    radial-gradient(circle at 50% 80%, #0ea5e9, transparent 45%);
+  opacity: 0.45;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+  width: min(960px, 95vw);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 6rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4f46e5;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(79, 70, 229, 0.12);
+}
+
+.badge-soft {
+  background: rgba(14, 165, 233, 0.12);
+  color: #0ea5e9;
+}
+
+.predictor header {
+  margin-bottom: 1.5rem;
+}
+
+.subtle {
+  margin: 0.35rem 0 0;
+  color: #64748b;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+label {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+input {
+  padding: 0.85rem 1rem;
+  border: 1px solid #cbd5f5;
+  border-radius: 0.85rem;
+  font-size: 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+}
+
+input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+button[type="submit"] {
+  grid-column: 1 / -1;
+  padding: 0.95rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.95rem;
+  background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(14, 165, 233, 0.35);
+}
+
+.hint {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.result-panel {
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  background: radial-gradient(circle at top, rgba(79, 70, 229, 0.1), transparent),
+    #1e1b4b;
+  color: #e0e7ff;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.panel-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: #a5b4fc;
+}
+
+.price {
+  margin: 0;
+  font-weight: 600;
+}
+
+.price.usd {
+  font-size: 2rem;
+}
+
+.price.inr {
+  font-size: 1.25rem;
+  color: #bfdbfe;
+}
+
+.result-message {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #c7d2fe;
+}
+
+.result-message.error {
+  color: #fecaca;
+}
+
+@media (max-width: 960px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .result-panel {
+    order: -1;
+  }
+}
+
